@@ -5,7 +5,7 @@ import s from "./Loader.module.css"
 const Loader = () => {
   return (
     <div className={s.loader}>
-      <ClipLoader size={50} color="#007bff" position="center"/>
+      <ClipLoader className={s.clip} size={50}/>
     </div>
   );
 };

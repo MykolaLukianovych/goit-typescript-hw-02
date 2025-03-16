@@ -1,12 +1,20 @@
 
 import Modal from "react-modal";
 import s from "./ImageModal.module.css"
+import { Image } from "../../App";
+import { MouseEvent } from "react";
 
 
-const ImageModal = ({ image, onClose }) => {
 
-    const handleOverlayClick = (e) => {
-    if (e.target.classList.contains(s.overlay)) {
+type Props = {
+  image: Image | null;
+  onClose: () => void;
+};
+
+const ImageModal = ({ image, onClose }: Props) => {
+
+    const handleOverlayClick = (e: MouseEvent<HTMLDivElement>) => {
+    if ((e.target as HTMLElement).classList.contains(s.overlay)) {
       onClose()
     };
   };
